@@ -30,4 +30,6 @@ addToCart(clothes: Clothes): void {
 maxReached(m:string, clothes:Clothes){
   clothes.stock = 0;  
 }
+
+
 }

@@ -1,0 +1,62 @@
+<h1></h1>
+<div class="form-row">
+   
+    <div class="col-md-4 mb-3">
+        <label for="validationDefault01">Nombre</label>
+        <input required [(ngModel)]="name" type="text" class="form-control" placeholder="Nombre" >
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="validationDefault02">Tipo </label>
+        <input required  [(ngModel)]="type" type="text" class="form-control"  placeholder="Tipo" >
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="validationDefault02">Precio </label>
+        <input  required [(ngModel)]="price" type="number" class="form-control"  placeholder="Precio" >
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="validationDefault02">Stock </label>
+        <input required [(ngModel)]="stock" type="number" class="form-control"  placeholder="Stock" >
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="validationDefault02">Imagen </label>
+        <input required [(ngModel)]="image" type="text" class="form-control" placeholder="Imagen (Link dirección de la imagen)" >
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="validationDefault02">Promocion</label>
+        <select [(ngModel)]="promotion">
+            <option  [(ngModel)]="promotion" value="true">SI</option>
+            <option  [(ngModel)]="promotion" value="false">NO</option>
+        </select>
+    </div>
+    
+</div>
+<button class="btn btn-primary" (click)="addItem()" type="submit">Agregar producto</button>
+<h1></h1>
+<h3>Lista de ropa </h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Eliminar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cloth of items">
+            <td>{{cloth.id}}</td>
+            <td ><img width="50px" [src]="cloth.image" [alt]="cloth.name"></td>
+            <td>{{cloth.name}}</td>
+            <td>{{cloth.type}}</td>
+            <td [ngClass]="{'promotion': cloth.promotion}">{{cloth.price | currency }}</td>
+            <td>{{cloth.stock}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="deleteItem(cloth)" type="submit">Eliminar</button>
+            </td>
+        </tr>
+        
+    </tbody>
+</table>   

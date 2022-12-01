@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ClothesAboutComponent } from './clothes-about/clothes-about.component';
+import { ClothesManageComponent } from './clothes-manage/clothes-manage.component';
 import { ShopClothesComponent } from './shop-clothes/shop-clothes.component';
 
 const routes: Routes = [
@@ -14,8 +14,8 @@ const routes: Routes = [
     component: ShopClothesComponent
   },
   {
-    path: 'about',
-    component: ClothesAboutComponent
+    path: 'manage',
+    component: ClothesManageComponent
   }
   ];
 
