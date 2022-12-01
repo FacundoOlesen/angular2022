@@ -1,0 +1,27 @@
+<h3>Lista de ropa</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Compra</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cloth of clothes">
+            <td><img [src]="cloth.image" [alt]="cloth.name"></td>
+            <td>{{cloth.name}}</td>
+            <td>{{cloth.type}}</td>
+            <td [ngClass]="{'promotion': cloth.promotion}">{{cloth.price | currency }}</td>
+            <td> <span class="badge bg-secondary" *ngIf="cloth.stock==0">Sin stock </span></td>
+            <td>
+                <app-input-number [(quantity)] = "cloth.quantity" [max]="cloth.stock" (maxReached)="maxReached($event, cloth)" *ngIf="cloth.stock"></app-input-number>
+                <button class="btn btn-primary"  (click)="addToCart(cloth)">Comprar</button>
+            </td>
+        </tr>
+        
+    </tbody>
+</table>
