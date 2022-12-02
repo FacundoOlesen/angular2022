@@ -1,6 +1,10 @@
 <h3>Carrito de compras</h3>
-<ul>
-    <li *ngFor="let clothes of cartList$ | async">
-        {{clothes.name}}: {{clothes.quantity}} 
-    </li>
-</ul>
+<div class="cart">
+
+    <div class="card" style="width: 18rem;" *ngFor="let clothes of cartList$ | async">
+        <img class="card-img-top" [src]="clothes.image" [alt]="clothes.name">
+        <div class="card-body">
+            <h5 class="card-title">{{clothes.name}} : {{clothes.quantity}} </h5>
+        </div>    
+    </div>
+</div>

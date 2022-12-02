@@ -23,4 +23,5 @@ export class ClothesCartService {
       console.log(this._cartList);
       this.cartList.next(this._cartList);
     }
+
 }

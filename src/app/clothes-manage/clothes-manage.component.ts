@@ -40,7 +40,10 @@ export class ClothesManageComponent implements OnInit {
       promotion: this.promotion,
       quantity: this.stock
     }
-    this.ClothesDataService.addItems(item).subscribe(clothes => this.items.push(item));
+    this.ClothesDataService.addItems(item).subscribe(clothes => {
+      this.items.push(item)
+      this.showTable();
+    });
   }
 
   deleteItem(item: Item) {

@@ -27,9 +27,10 @@ addToCart(clothes: Clothes): void {
     clothes.quantity=0;   
 }
 
+
 maxReached(m:string, clothes:Clothes){
+  alert(m);
   clothes.stock = 0;  
 }
-
 
 }
