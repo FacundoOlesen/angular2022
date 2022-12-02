@@ -22,9 +22,11 @@ ngOnInit(): void {
 }
 
 addToCart(clothes: Clothes): void {
+  if ((clothes.quantity !=0) && (clothes.quantity>0)) {
     this.cart.addToCart(clothes);
     clothes.stock-=clothes.quantity;
     clothes.quantity=0;   
+  }
 }
 
 
@@ -32,5 +34,4 @@ maxReached(m:string, clothes:Clothes){
   alert(m);
   clothes.stock = 0;  
 }
-
 }

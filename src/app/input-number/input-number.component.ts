@@ -33,7 +33,6 @@ export class InputNumberComponent {
   }
   changeQuantity(): void  {
     this.quantityChange.emit(this.quantity);
-
   }
   
 }
