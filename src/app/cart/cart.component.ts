@@ -10,8 +10,10 @@ import { Clothes } from '../clothes-list/clothes';
 })
 export class CartComponent {
   cartList$: Observable<Clothes[]>;
+  entrada:number[]=[];
   constructor(private cart: ClothesCartService) {
     this.cartList$ = cart.cartList.asObservable();
   }
+
 
 }
